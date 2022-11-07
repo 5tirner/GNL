@@ -46,8 +46,8 @@ char	*get_next_line(int fd)
 	stock = buffer_to_stock(fd, stock);
 	if (!stock)
 		return (NULL);
-	line = ft_stock(stock);
-	stock = ft_new_stock(stock);
+	line = ft_pre_save(stock);
+	stock = ft_sec_save(stock);
 	return (line);
 }
 // int main()
