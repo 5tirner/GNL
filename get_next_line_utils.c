@@ -79,7 +79,7 @@ char	*ft_pre_save(char *stock)
 		return (NULL);
 	while (stock[i] && stock[i] != '\n')
 		i++;
-	str = (char *)malloc(sizeof(char) * (i + 2));
+	str = malloc(i + 2);
 	if (!str)
 		return (NULL);
 	i = 0;
