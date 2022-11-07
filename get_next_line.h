@@ -22,7 +22,7 @@ char	*get_next_line(int fd);
 int		ft_strlen(char *str);
 char	*ft_strchr(char *str, int c);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_move_to_stock(int fd, char *stock);
-char	*ft_stock(char *stock);
-char	*ft_new_stock(char *stock);
+char	*buffer_to_stock(int fd, char *stock);
+char	*ft_pre_save(char *stock);
+char	*ft_sec_save(char *stock);
 #endif
