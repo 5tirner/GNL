@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*save_on_stock(int fd, char *stock)
+char	*buffer_to_stock(int fd, char *stock)
 {
 	char	*buff;
 	int		i;
@@ -43,7 +43,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	stock = save_on_stock(fd, stock);
+	stock = buffer_to_stock(fd, stock);
 	if (!stock)
 		return (NULL);
 	line = ft_stock(stock);
