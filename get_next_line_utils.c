@@ -69,7 +69,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (str);
 }
 
-char	*ft_stock(char *stock)
+char	*ft_pre_save(char *stock)
 {
 	char	*str;
 	int		i;
@@ -97,7 +97,7 @@ char	*ft_stock(char *stock)
 	return (str);
 }
 
-char	*ft_new_stock(char *stock)
+char	*ft_sec_save(char *stock)
 {
 	char	*str;
 	int		i;
