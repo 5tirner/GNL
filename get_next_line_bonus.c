@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 13:38:17 by zasabri           #+#    #+#             */
-/*   Updated: 2022/11/08 00:16:55 by zasabri          ###   ########.fr       */
+/*   Created: 2022/11/07 23:34:31 by zasabri           #+#    #+#             */
+/*   Updated: 2022/11/08 00:15:27 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1
 #endif
@@ -42,14 +42,14 @@ char	*buffer_to_stock(int fd, char *stock)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stock;
+	static char	*stock[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	stock = buffer_to_stock(fd, stock);
-	if (!stock)
+	stock[fd] = buffer_to_stock(fd, stock[fd]);
+	if (!stock[fd])
 		return (NULL);
-	line = ft_pre_save(stock);
-	stock = ft_sec_save(stock);
+	line = ft_pre_save(stock[fd]);
+	stock[fd] = ft_sec_save(stock[fd]);
 	return (line);
 }
