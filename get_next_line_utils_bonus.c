@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:35:10 by zasabri           #+#    #+#             */
-/*   Updated: 2022/11/07 23:41:00 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/11/08 20:24:45 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1 = malloc(1);
 		s1[0] = '\0';
 	}
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
 	while (s1[i])
@@ -107,7 +107,7 @@ char	*ft_sec_save(char *stock)
 		free(stock);
 		return (NULL);
 	}
-	str = malloc((ft_strlen(stock) - i));
+	str = malloc(ft_strlen(stock) - i);
 	if (!str)
 		return (NULL);
 	i += 1;

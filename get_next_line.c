@@ -6,13 +6,13 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:38:17 by zasabri           #+#    #+#             */
-/*   Updated: 2022/11/08 00:16:55 by zasabri          ###   ########.fr       */
+/*   Updated: 2022/11/08 20:34:06 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 42
 #endif
 
 char	*buffer_to_stock(int fd, char *stock)
@@ -30,7 +30,9 @@ char	*buffer_to_stock(int fd, char *stock)
 		if (i == -1)
 		{
 			free(buff);
-			return (NULL);
+			if (!stock)
+				return (NULL);
+			return (stock);
 		}
 		buff[i] = '\0';
 		stock = ft_strjoin(stock, buff);
